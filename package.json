@@ -1,0 +1,43 @@
+{
+  "name": "nho_project",
+  "version": "0.0.1",
+  "description": "have a drink, donate a dollar",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taylorharwin/nho_project.git"
+  },
+  "keywords": [
+    "plaid"
+  ],
+  "author": "taylor.harwin@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taylorharwin/nho_project/issues"
+  },
+  "homepage": "https://github.com/taylorharwin/nho_project#readme",
+  "dependencies": {
+    "class-set": "0.0.4",
+    "express": "^4.13.3",
+    "lodash": "^4.0.0",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
+    "react-redux": "^4.0.6",
+    "redux": "^3.0.5"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "css-loader": "^0.23.1",
+    "http-server": "^0.8.5",
+    "jsx-loader": "^0.13.2",
+    "reactify": "^1.1.1",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.11",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
