@@ -23,6 +23,7 @@
     "class-set": "0.0.4",
     "express": "^4.13.3",
     "lodash": "^4.0.0",
+    "plaid": "^1.0.10",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "react-redux": "^4.0.6",
