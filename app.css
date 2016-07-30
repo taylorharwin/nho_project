@@ -24,6 +24,7 @@
 	display: table-cell;
 	vertical-align: middle;
 	padding-left:10px;
+	width: 50%;
 }
 
 .table_text {
@@ -67,8 +68,8 @@ body {
 }
 
 .trapezoid {
+	overflow: hidden;
 	width: 50px;
-	height: 10px;
     background-color: red;
 }
 
