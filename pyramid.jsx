@@ -10,7 +10,14 @@ var Pyramid = react.createClass({
 		var rows = _.map(pyramid, function(val, key){
 			var average = (val / total * 100)
 			average = Math.round(average * 100) / 100
-			return (<div>{needsMap[key]} : {average}</div>)
+
+			var style = {
+				border: '1px solid black',
+				height: average,
+				padding: '10px',
+				minHeight: '14px'
+			}
+			return (<div style={style}s>{needsMap[key]} : {average}</div>)
 		});
 		return rows;
 	},
