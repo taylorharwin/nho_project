@@ -6,9 +6,9 @@ var cmp = document.getElementById('root');
 	
 var data = {
 	pyramid: {
-		esteem:1,
+		esteem:10,
 		love_belonging:7,
-		physiological:75,
+		physiological:66,
 		safety:6,
 		self_actualization: 26
 	}

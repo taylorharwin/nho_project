@@ -9,7 +9,7 @@ var Pyramid = react.createClass({
 		var rows = _.map(pyramid, function(val, key){
 			var average = (val / total);
 			var displayAverage = (average * 100).toFixed(2);
-			var pxHeight = (average * 300) + 'px';
+			var pxHeight = (average * 346) + 'px';
 
 
 			var name = needsMap[key].display,
@@ -22,10 +22,7 @@ var Pyramid = react.createClass({
 			return (
 				<div className="table" rel={rank} style={style}>
 					<div className="table_cell">
-						<span className="table_text">{name} : {displayAverage}% </span>
-				<div style={{height: pxHeight, width: trapWidth}}
-						className="trapezoid"></div> 
-
+						<span className="table_text">{name} : {displayAverage}% </span> 
 					</div>
 
 				</div>)
