@@ -1,0 +1,8 @@
+█ [ /Users/tharwin/Desktop/NHO_Project ] glue path
+/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+█ [ /Users/tharwin/Desktop/NHO_Project ] echo $PATH
+/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+ █ [ /Users/tharwin/Desktop/NHO_Project ] tsc process_transactions.ts
+

@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "declaration": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false
+    },
+    "files" : [
+    	"process_transactions.ts",
+    	"handle_response.ts",
+        "test_data.ts"
+    ]
+}

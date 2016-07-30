@@ -52,7 +52,15 @@
 /* 1 */
 /***/ function(module, exports) {
 
-	/** @jsx React.DOM */console.log('hello world');
+	/** @jsx React.DOM */console.log('hello');
+	var socket = io();
+
+	socket.on('data_ready', function(data){
+		console.log(data);
+	});
+
+
+
 
 /***/ }
 /******/ ]);

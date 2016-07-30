@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Accountability</title>
+    <title>Hierarchy of Needs</title>
     <script src="./node_modules/react/dist/react-with-addons.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>    
     <link rel="stylesheet" type="text/css" href="app.css">
     <link href="https://fonts.googleapis.com/css?family=Harmattan" rel="stylesheet">
 </head>
 <body>
 
 	<div class="wrapper">
-
+    <div class="center_container">
         <div class="panel top">
-    		<h1>Accountibility</h1>
-            <h3>Tweets if you buy something you shouldn't</h3>
+    		<h1>Hierarchy of Needs</h1>
+            <h3>Organizes your psychological well-being by what you purchase</h3>
              <h2>By <a href="https://www.linkedin.com/in/taylorharwin">Taylor Harwin</a> </h2>
         </div>
 
         <div class="panel">
-            <form id="plaid-id" class="btn" method="POST" action="/accounts"></form>
-        </div>
-        <div class="panel">
-            <form class="btn" method="POST" action="/twitterauth">
-              <button class="btn">Link your Twitter Account</button>
-            </form>
+            <form id="some-id" class="btn" method="POST" action="/authenticate"></form>
         </div>
 
         <div class="panel app-container">
-    	    <div id="root"></div>
+    	    <div id="root">
+           Stuff goes here 
+          </div>
     	</div>
 
         <div class="panel bottom">
             <h2>Built by Taylor Harwin as a Plaid onboarding project</h2>
             <h2><a href="https://github.com/taylorharwin/nho_project">View Source on GitHub</a> </h2>
         </div>
+      </div>
     </div>
     <script type="text/javascript" src="/bundle.js"></script>
     <script
       src="https://cdn.plaid.com/link/stable/link-initialize.js"
       data-client-name="Client Name"
-      data-form-id="plaid-id"
-      data-key="test_key"
+      data-form-id="some-id"
+      data-key="5f7b2a92afa8cfc8e5869050709fd2"
       data-product="connect"
       data-env="tartan">
 </script>
