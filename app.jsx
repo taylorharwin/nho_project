@@ -3,7 +3,7 @@ var socket = io();
 var reactDOM = require('react-dom');
 var cmp = document.getElementById('root');
 
-
+	
 var data = {
 	pyramid: {
 		esteem:1,

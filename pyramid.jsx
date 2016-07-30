@@ -3,22 +3,33 @@ var _ = require('lodash');
 var needsMap = require('./needsMap.js');
 
 var Pyramid = react.createClass({
-
-
 	getRows: function(pyramid){
 		var total = _.reduce(pyramid, function(accum, val){return accum + val}, 0);
 		var rows = _.map(pyramid, function(val, key){
-			var average = (val / total * 100)
-			average = Math.round(average * 100) / 100
+			var average = Math.round((val / total * 100) * 100) / 100 + '%';
 
+			var name = needsMap[key].display,
+				rank = needsMap[key].rank;
 			var style = {
-				border: '1px solid black',
+				borderRight: '1px solid black',
+				borderBottom: '1px solid black',
+				borderLeft: '1px solid black',
 				height: average,
-				padding: '10px',
-				minHeight: '14px'
+				minHeight:'14px'
 			}
-			return (<div style={style}s>{needsMap[key]} : {average}</div>)
+
+			var trapWidth = (rank * 60) + 'px';
+			return (
+				<div className="table" rel={rank} style={style}> 
+					<div className="table_cell">
+						<span className="table_text">{name} : {average}% </span>
+					</div>
+				</div>)
 		});
+
+		rows.sort(function(a, b){return a.props.rel > b.props.rel});
+
+		console.log(rows);
 		return rows;
 	},
 
