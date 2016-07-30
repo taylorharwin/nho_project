@@ -23,8 +23,10 @@ var Pyramid = react.createClass({
 				<div className="table" rel={rank} style={style}>
 					<div className="table_cell">
 						<span className="table_text">{name} : {displayAverage}% </span>
+				<div style={{height: pxHeight, width: trapWidth}}
+						className="trapezoid"></div> 
+
 					</div>
-										<div style={{height: pxHeight, width: trapWidth}}className="trapezoid"></div> 
 
 				</div>)
 		});

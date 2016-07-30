@@ -14,14 +14,12 @@
 
 
 .table {
-	display:table;
 	width: 100%;
 	text-align: left;
 	height: 100%;
 }
 
 .table_cell {
-	display: table-cell;
 	vertical-align: middle;
 	padding-left:10px;
 	width: 50%;
@@ -32,7 +30,7 @@
 }
 
 .pyramid_box {
-	height: 300px;
+	height: 346px;
 }
 
 .container {
@@ -68,9 +66,9 @@ body {
 }
 
 .trapezoid {
-	overflow: hidden;
-	width: 50px;
+	vertical-align:middle;
     background-color: red;
+    text-align:center;
 }
 
 .center_container {
