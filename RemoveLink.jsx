@@ -3,7 +3,8 @@ var RemoveLink = React.createClass({
 	handleClick: function(){
 		console.log('delete user');
 		console.log(this.props.socket);
-		this.props.socket.emit('delete');
+		this.props.socket.emit('delete', null, function(){
+			console.log('deleted user')});
 	},
 	render: function(){
 	return (
