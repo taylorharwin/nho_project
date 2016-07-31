@@ -8,6 +8,10 @@
 	border-radius: 8px 8px  0 0;
 }
 
+.app_container {
+	background: transparent;
+}
+
 .bottom {
 	border-radius: 0 0 8px 8px;
 }
@@ -23,14 +27,20 @@
 	vertical-align: middle;
 	padding-left:10px;
 	width: 50%;
+	height: 100%;
+	position: relative;
 }
 
 .table_text {
+	padding-top: 3px;
+	padding-bottom: 4px;
 
 }
 
 .pyramid_box {
+	position: relative;
 	height: 346px;
+	background:white;
 }
 
 .container {
@@ -38,15 +48,18 @@
 	height: auto;
 }
 
+.light {
+	background-color: #D8DEE9;
+	box-shadow: rgba(255, 255, 255, 0.65098) 0px 0px 1px 1px inset
+}
+
 .panel {
 	margin-left: auto;
 	margin-right: auto;
 	height: 80%;
-	width: 80%;
-	background-color: #D8DEE9;
+	width: 600px;
 	text-align: center;
 	margin: 10px 10px;
-	box-shadow: rgba(255, 255, 255, 0.65098) 0px 0px 1px 1px inset
 }
 
 body {
@@ -65,25 +78,51 @@ body {
 	margin-right: auto;
 }
 
-.trapezoid {
-	vertical-align:middle;
-    background-color: red;
-    text-align:center;
+.center_container {
+	margin-left: 30%;
 }
 
-.center_container {
-	margin-left: auto;
-	margin-right: auto;
-	width: 90%;
+.mask_right {
+  width: 0; 
+  height: 0; 
+  border-top: 0px solid transparent;
+  border-bottom: 346px solid transparent;
+  border-right: 207px solid #D8DEE9;
+  position: absolute;
+  z-index:10;
+  left:394px;
+}
+
+.mask_left {
+  width: 0; 
+  height: 0; 
+  border-top: 0px solid transparent;
+  border-bottom: 346px solid transparent;
+  border-left: 207px solid #D8DEE9;
+  position: absolute;
+  z-index:10;
+  left:186px;
+}
+
+.trapezoid {
+	width: 415px;
+	position: absolute;
+	left: 60%;
+	top: 0px;
+}
+h1 {
+	font-size:22px;
 }
 h2 {
 	margin: 2px 2px;
+	font-size:18px;
 }
 h3 {
 	margin: 2px 2px;
+	font-size:18px;
 }
 #plaid-link-button {
-	font-size: 18px;
+	font-size: 14px;
 	padding: 10px 10px;
 	width: 80%;
 	height: 80%;
@@ -92,5 +131,6 @@ h3 {
 }
 
 #root {
-	height: 100%;
+	height: 346px;
+	width:600px;
 	}
