@@ -32,8 +32,11 @@
 }
 
 .table_text {
-	padding-top: 3px;
-	padding-bottom: 4px;
+	position:absolute;
+	top: 30%;
+	left: 20%;
+	font-weight: bold;
+	z-index:30;
 
 }
 
@@ -66,7 +69,7 @@ body {
 	height: 100%;
 	width: 100%;
 	background-color: #6699CC;
-	font-family: 'Harmattan', sans-serif;
+	font-family: 'Prompt', sans-serif;
 }
 
 .btn {
@@ -128,6 +131,8 @@ h3 {
 	height: 80%;
 	margin-left: auto;
 	margin-right: auto;
+	font-family: 'Prompt', sans-serif;
+
 }
 
 #root {
