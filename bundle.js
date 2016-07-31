@@ -69,9 +69,8 @@
 	}
 
 
-	reactDOM.render(React.createElement(Pyramid, {data: data}), cmp);
 	socket.on('data_ready', function(data){
-		
+		reactDOM.render(React.createElement(Pyramid, {data: data}), cmp);
 	});
 
 	reactDOM.render(React.createElement("div", null, "How are you doing?"), cmp)
@@ -35434,7 +35433,7 @@
 	/** @jsx React.DOM */var RemoveLink = React.createClass({displayName: "RemoveLink",
 		render: function(){
 		return (
-			React.createElement("button", null, "Remove me now, please ")
+			React.createElement("button", {className: "remove_button"}, "Forget my bank account ")
 		)
 		}
 	});

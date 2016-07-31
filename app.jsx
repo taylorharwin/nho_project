@@ -15,12 +15,11 @@ var data = {
 }
 
 
-reactDOM.render(<Pyramid data={data}></Pyramid>, cmp);
 socket.on('data_ready', function(data){
-	
+	reactDOM.render(<Pyramid data={data}></Pyramid>, cmp);
 });
 
-// reactDOM.render(<div>How are you doing?</div>, cmp)
+reactDOM.render(<div>How are you doing?</div>, cmp)
 
 
 
