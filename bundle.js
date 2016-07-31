@@ -53,11 +53,12 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/** @jsx React.DOM */var Pyramid = __webpack_require__(2);
+	var RemoveLink = __webpack_require__(153);
 	var socket = io();
 	var reactDOM = __webpack_require__(4);
 	var cmp = document.getElementById('root');
+	var remove = document.getElementById('remove');
 
-		
 	var data = {
 		pyramid: {
 			esteem:10,
@@ -68,12 +69,16 @@
 		}
 	}
 
+	reactDOM.render(React.createElement("div", null, "How are you doing?"), cmp)
+	reactDOM.render(React.createElement(RemoveLink, {socket: socket}), remove)
+
 
 	socket.on('data_ready', function(data){
+		var ask = document.getElementsByClassName('ask')[0];
+		ask.parentNode.removeChild(ask);
 		reactDOM.render(React.createElement(Pyramid, {data: data}), cmp);
 	});
 
-	reactDOM.render(React.createElement("div", null, "How are you doing?"), cmp)
 
 
 
@@ -87,7 +92,6 @@
 	var reactDom = __webpack_require__(4);
 	var _ = __webpack_require__(150);
 	var needsMap = __webpack_require__(152);
-	var RemoveLink = __webpack_require__(153);
 
 	var Pyramid = react.createClass({
 
@@ -127,10 +131,10 @@
 		render: function(){
 			return (
 				React.createElement("div", {className: "pyramid_box light"}, 
-				React.createElement(RemoveLink, null), 
 				React.createElement("div", {className: "mask_right"}), 
 				React.createElement("div", {className: "mask_left"}), 
 					this.getRows(this.props.data.pyramid)
+
 				)
 				);
 		}
@@ -35431,9 +35435,15 @@
 /***/ function(module, exports) {
 
 	/** @jsx React.DOM */var RemoveLink = React.createClass({displayName: "RemoveLink",
+
+		handleClick: function(){
+			console.log('delete user');
+			console.log(this.props.socket);
+			this.props.socket.emit('delete');
+		},
 		render: function(){
 		return (
-			React.createElement("button", {className: "remove_button"}, "Forget my bank account ")
+			React.createElement("button", {onClick: this.handleClick, className: "remove_button"}, "Forget my bank account ")
 		)
 		}
 	});

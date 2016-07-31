@@ -135,16 +135,14 @@ h3 {
 }
 
 .remove_button {
-	position: absolute;
-	font-size: 10px;
+	font-size: 14px;
 	padding: 10px 10px;
-	width: 150px;
-	top: 20px;
-	right: 5px;
-	height: 38px;
+	width: 80%;
+	height: 80%;
 	z-index: 400;
 	margin-left: auto;
 	margin-right: auto;
+	margin: 10px;
 	font-family: 'Prompt', sans-serif;
 }
 

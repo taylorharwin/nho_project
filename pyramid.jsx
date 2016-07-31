@@ -2,7 +2,6 @@ var react = require('react');
 var reactDom = require('react-dom');
 var _ = require('lodash');
 var needsMap = require('./needsMap.js');
-var RemoveLink = require('./removeLink.jsx');
 
 var Pyramid = react.createClass({
 
@@ -42,10 +41,10 @@ var Pyramid = react.createClass({
 	render: function(){
 		return (
 			<div className="pyramid_box light">
-			<RemoveLink/>
 			<div className="mask_right"></div>
 			<div className="mask_left"></div>
 				{this.getRows(this.props.data.pyramid)}
+
 			</div>
 			);
 	}

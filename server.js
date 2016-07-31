@@ -27,7 +27,11 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
   console.log('a user connected');
-})
+});
+
+io.on('deleted', function(socket){
+  console.log('deleting account');
+});
 
 
 app.post('/authenticate', function(req, res){
