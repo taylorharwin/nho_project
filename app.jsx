@@ -16,13 +16,17 @@ var data = {
 }
 
 reactDOM.render(<div>How are you doing?</div>, cmp)
-reactDOM.render(<RemoveLink socket={socket}></RemoveLink>, remove)
 
 
 socket.on('data_ready', function(data){
 	var ask = document.getElementsByClassName('ask')[0];
 	ask.parentNode.removeChild(ask);
 	reactDOM.render(<Pyramid data={data}></Pyramid>, cmp);
+	reactDOM.render(<RemoveLink socket={socket}></RemoveLink>, remove)
+});
+
+socket.on('delete_complete', function(){
+	reactDOM.render(<div> Thanks, your account has been deleted successfully </div>, remove);
 });
 
 

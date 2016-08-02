@@ -70,13 +70,17 @@
 	}
 
 	reactDOM.render(React.createElement("div", null, "How are you doing?"), cmp)
-	reactDOM.render(React.createElement(RemoveLink, {socket: socket}), remove)
 
 
 	socket.on('data_ready', function(data){
 		var ask = document.getElementsByClassName('ask')[0];
 		ask.parentNode.removeChild(ask);
 		reactDOM.render(React.createElement(Pyramid, {data: data}), cmp);
+		reactDOM.render(React.createElement(RemoveLink, {socket: socket}), remove)
+	});
+
+	socket.on('delete_complete', function(){
+		reactDOM.render(React.createElement("div", null, " Thanks, your account has been deleted successfully "), remove);
 	});
 
 
@@ -35437,9 +35441,8 @@
 	/** @jsx React.DOM */var RemoveLink = React.createClass({displayName: "RemoveLink",
 
 		handleClick: function(){
-			console.log('delete user');
-			console.log(this.props.socket);
-			this.props.socket.emit('delete', null, function(){console.log('deleted user')});
+			this.props.socket.emit('delete', null, function(){
+				console.log('deleted user')});
 		},
 		render: function(){
 		return (

@@ -12,7 +12,17 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+var creds = {
+  access_token: ''
+};
 
+function getAccessToken(){
+  return creds.access_token
+}
+
+function setAccessToken(token){
+  creds.access_token = token
+}
 
 app.use(express.static(__dirname));
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
@@ -22,35 +32,34 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 app.get('/', function(req, res){
     res.render('index');
-    console.log(io);
 });
 
 io.on('connection', function(socket){
-  console.log('a user connected');
-
-  socket.on('delete', function(socket){
-  console.log('deleting account');
-  });
-});
-
-
-
-
-app.post('/authenticate', function(req, res){
-  var public_token = req.body.public_token;
-
-   plaidClient.exchangeToken(public_token, function(err, res) {
-    if (err != null) {
-      console.log('err');
-    } else {
-      var access_token = res.access_token;
-      plaidClient.getConnectUser(access_token, {gte: '90 days ago'}, 
-        function(err, res) {
-          var pyramid  = handleResponse(res.transactions);
-          io.emit('data_ready', {pyramid: pyramid});
+  socket.on('delete', function(){
+        console.log('user wants to delete');
+        plaidClient.deleteConnectUser(getAccessToken(), null, function(err, res){
+          console.log(res);
+          io.emit('delete_complete');
+        });
       });
-    }
+
+  app.post('/authenticate', function(req, res){
+    var public_token = req.body.public_token;
+
+     plaidClient.exchangeToken(public_token, function(err, res) {
+      if (err != null) {
+        console.log('err');
+      } else {
+        setAccessToken(res.access_token);
+        plaidClient.getConnectUser(getAccessToken(), {gte: '90 days ago'}, 
+          function(err, res) {
+            var pyramid  = handleResponse(res.transactions);
+            io.emit('data_ready', {pyramid: pyramid});
+        });
+      }
+    });
   });
+
 });
 
 
