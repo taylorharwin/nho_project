@@ -69,12 +69,14 @@
 		}
 	}
 
-	reactDOM.render(React.createElement("div", null, "How are you doing?"), cmp)
+	reactDOM.render(React.createElement("div", null), cmp)
+
+	socket.on('loading', function(){
+		reactDOM.render(React.createElement("div", null, "Loading...."), cmp);
+	});
 
 
 	socket.on('data_ready', function(data){
-		var ask = document.getElementsByClassName('ask')[0];
-		ask.parentNode.removeChild(ask);
 		reactDOM.render(React.createElement(Pyramid, {data: data}), cmp);
 		reactDOM.render(React.createElement(RemoveLink, {socket: socket}), remove)
 	});

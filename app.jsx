@@ -15,12 +15,14 @@ var data = {
 	}
 }
 
-reactDOM.render(<div>How are you doing?</div>, cmp)
+reactDOM.render(<div></div>, cmp)
+
+socket.on('loading', function(){
+	reactDOM.render(<div>Loading....</div>, cmp);
+});
 
 
 socket.on('data_ready', function(data){
-	var ask = document.getElementsByClassName('ask')[0];
-	ask.parentNode.removeChild(ask);
 	reactDOM.render(<Pyramid data={data}></Pyramid>, cmp);
 	reactDOM.render(<RemoveLink socket={socket}></RemoveLink>, remove)
 });

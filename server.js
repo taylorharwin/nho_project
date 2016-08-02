@@ -45,17 +45,20 @@ io.on('connection', function(socket){
 
   app.post('/authenticate', function(req, res){
     var public_token = req.body.public_token;
+    io.emit('loading');
 
      plaidClient.exchangeToken(public_token, function(err, res) {
       if (err != null) {
         console.log('err');
       } else {
         setAccessToken(res.access_token);
-        plaidClient.getConnectUser(getAccessToken(), {gte: '90 days ago'}, 
-          function(err, res) {
-            var pyramid  = handleResponse(res.transactions);
-            io.emit('data_ready', {pyramid: pyramid});
-        });
+          plaidClient.getConnectUser(getAccessToken(), {gte: '30 days ago'}, 
+            function(err, res) {
+              if (res.transactions.length > 0){
+                var pyramid  = handleResponse(res.transactions);
+                io.emit('data_ready', {pyramid: pyramid});
+              } 
+        }); 
       }
     });
   });

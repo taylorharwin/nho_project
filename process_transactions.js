@@ -1,5 +1,6 @@
 "use strict";
 function process(data) {
+    console.log(data);
     var mappedData = data.map(function (transaction) {
         return {
             name: transaction.name,
