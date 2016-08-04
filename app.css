@@ -18,7 +18,9 @@
 
 ol {
 	text-align: left;
+	font-size: 13px;
 }
+
 
 
 .table {
@@ -37,7 +39,7 @@ ol {
 
 .table_text {
 	position:absolute;
-	top: 30%;
+	top: 50%;
 	left: 20%;
 	font-weight: bold;
 	z-index:30;
@@ -122,11 +124,11 @@ h1 {
 }
 h2 {
 	margin: 2px 2px;
-	font-size:18px;
+	font-size:15px;
 }
 h3 {
 	margin: 2px 2px;
-	font-size:18px;
+	font-size:15px;
 }
 #plaid-link-button {
 	font-size: 14px;
@@ -135,6 +137,7 @@ h3 {
 	height: 80%;
 	margin-left: auto;
 	margin-right: auto;
+	cursor:pointer;
 	font-family: 'Prompt', sans-serif;
 }
 

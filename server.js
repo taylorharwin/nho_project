@@ -52,7 +52,7 @@ io.on('connection', function(socket){
         console.log('err');
       } else {
         setAccessToken(res.access_token);
-          plaidClient.getConnectUser(getAccessToken(), {gte: '30 days ago'}, 
+          plaidClient.getConnectUser(getAccessToken(), {gte: '60 days ago'}, 
             function(err, res) {
               if (res.transactions.length > 0){
                 var pyramid  = handleResponse(res.transactions);
